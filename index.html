@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    body{
+        padding: 75px;
+        text-align: center;
+    }
+</style>
+
+<body>
+    <h1 id="halo">Pengubah Warna Otomatis tidak percaya klik saja tombol di bawah ini</h1>
+    <button onclick="ubah()">klik ini untuk mengubah teks</button>
+
+    <br><br>
+    <label>Atur sendiri warna Favoritmu</label><br>
+    <input type="color" id="colorPicker">
+
+    <script>
+       const judul = document.getElementById("halo");
+
+       const warnaOtomatis =  ["blue", "pink", "greey", "green", "chocolate", "red", "yellow"];
+        let index = 0;
+
+        function ubah() {
+            judul.innerText ="Nah sekarang kamu percayakan aku bisa berubah warna klik lagi kalau kau masih ingin mengganti warna atau kau bisa atur dengan kotak dibawah dan pilih warna favoritmu"
+            judul.style.color = warnaOtomatis[index];
+            index = (index + 1) % warnaOtomatis.length;
+        }
+
+        document.getElementById(colorPicker).addEventListener("input"),
+         function () {
+            judul.style.color = this.value;
+         }
+
+    </script>
+</body>
+</html>
